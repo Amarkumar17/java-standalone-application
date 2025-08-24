@@ -2,19 +2,9 @@ pipeline {
 	agent any
 
     stages {
-		stage("Clean Up") {
-			steps {
-				deleteDir()
-			}
-		}
-		stage("Clone Repo"){
-			steps {
-				sh "git clone https://github.com/Amarkumar17/java-standalone-application.git"
-			}
-		}
 		stage('Build') {
 			steps{
-				sh "mvn -B -DskipTests clean package"
+				sh "mvn clean install"
 			}
         }
 		stage('Test') {
