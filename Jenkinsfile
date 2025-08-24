@@ -1,6 +1,7 @@
 pipeline {
 	agent any
-	stages{
+
+    stages {
 		stage("Clean Up") {
 			steps {
 				deleteDir()
@@ -11,8 +12,6 @@ pipeline {
 				sh "git clone https://github.com/Amarkumar17/java-standalone-application.git -b pipeline1"
 			}
 		}
-
-    stages {
 		stage('Build') {
 			steps{
 				sh "mvn clean install"
