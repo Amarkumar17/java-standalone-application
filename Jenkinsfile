@@ -15,7 +15,7 @@ pipeline {
 			steps {
 				dir("java-standalone-application")
 				{
-					sh "mvn clean install"
+					sh "mvn clean package"
 				}
 			}
 		}
